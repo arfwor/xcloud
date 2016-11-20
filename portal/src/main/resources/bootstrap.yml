@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: portal
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true

@@ -1,0 +1,36 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+  cloud:
+    config:
+      discovery:
+        enabled: true
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+---
+spring:
+  profiles: cloud
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-server1:${server.port}/eureka/, http://eureka-server2:${server.port}/eureka/
+

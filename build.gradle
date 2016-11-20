@@ -1,0 +1,106 @@
+// 构建脚本及依赖
+buildscript {
+    repositories { jcenter(); maven { url 'http://repo.spring.io/plugins-release' }; }
+    dependencies {
+		classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE'
+		classpath 'io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE'
+	}
+}
+
+// 所有工程的设置
+allprojects {
+	group 'org.learning.xcloud'
+	version '0.1.RELEASE'
+}
+
+// 子工程的设置
+subprojects {
+	// springframework的propdeps插件
+	apply plugin: 'propdeps'
+	apply plugin: 'propdeps-maven'
+	// eclipse 的插件，执行命令 gradle eclipse 就会生成 .project .classpath .settings
+	//apply plugin: 'eclipse'
+	apply plugin: 'propdeps-eclipse'
+	// idea 的插件，执行命令 gradle idea 就可以导入工程了
+    //apply plugin: 'idea'
+    apply plugin: 'propdeps-idea'
+    // 所有子项目都是 java 项目
+    apply plugin: 'java'
+	// java 源文件和编译使用版本
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+	// 使用的仓库
+    repositories { mavenLocal(); mavenCentral(); jcenter(); }
+
+    ext {
+    	springVersion = '4.3.4.RELEASE'
+    	cloudVersion = 'Camden.SR2'
+		jacksonVersion = '2.8.4'
+		shiroVersion = '1.3.2'
+    	psqlVersion = '9.4.1208'
+		junitVersion = '4.12'
+	}
+
+	// 所有子工程公共的依赖
+    dependencies {
+    	compile("org.slf4j:slf4j-api:1.7.21")
+        //runtime("org.slf4j:slf4j-log4j12:1.7.21")
+        //runtime("log4j:log4j:1.2.17")
+    	provided("javax.servlet:javax.servlet-api:3.1.0")
+        testCompile("junit:junit:$junitVersion")
+        testCompile("org.springframework:spring-test:$springVersion")
+        testCompile("org.postgresql:postgresql:$psqlVersion")
+    }
+}
+
+// config 工程配置
+project(':config') {
+	apply plugin: 'org.springframework.boot'
+	dependencies {
+//		compile('org.springframework.boot:spring-boot-starter-web')
+//		compile('org.springframework.boot:spring-boot-starter-actuator')
+//		compile('org.springframework.cloud:spring-cloud-config-monitor')
+//		compile('org.springframework.cloud:spring-cloud-starter-config')
+		compile('org.springframework.cloud:spring-cloud-starter-eureka')
+		compile('org.springframework.cloud:spring-cloud-config-server')
+	}
+	dependencyManagement { imports { mavenBom "org.springframework.cloud:spring-cloud-dependencies:$cloudVersion" } }
+}
+
+// eureka 工程配置
+project(':eureka') {
+	apply plugin: 'org.springframework.boot'
+	dependencies {
+//		compile('org.springframework.boot:spring-boot-starter-web')
+//		compile('org.springframework.boot:spring-boot-starter-actuator')
+//		compile('org.springframework.cloud:spring-cloud-config-monitor')
+		compile('org.springframework.cloud:spring-cloud-starter-config')
+		compile('org.springframework.cloud:spring-cloud-starter-eureka')
+		compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+	}
+	dependencyManagement { imports { mavenBom "org.springframework.cloud:spring-cloud-dependencies:$cloudVersion" } }
+}
+
+// portal 工程配置
+project(':portal') {
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+	dependencies {
+		compile('org.springframework.boot:spring-boot-starter-web')
+//		compile('org.springframework.boot:spring-boot-starter-actuator')
+//		compile('org.springframework.cloud:spring-cloud-config-monitor')
+		compile('org.springframework.cloud:spring-cloud-starter-config')
+		compile('org.springframework.cloud:spring-cloud-starter-eureka')
+		compile("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
+		compile("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
+		compile("com.fasterxml.jackson.datatype:jackson-datatype-hibernate4:$jacksonVersion")
+        runtime("org.aspectj:aspectjweaver:1.8.9")
+        runtime("org.aspectj:aspectjrt:1.8.9")
+        runtime("org.postgresql:postgresql:$psqlVersion")
+    }
+	dependencyManagement { imports { mavenBom "org.springframework.cloud:spring-cloud-dependencies:$cloudVersion" } }
+}
