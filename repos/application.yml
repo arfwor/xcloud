@@ -1,3 +1,4 @@
+# 共享配置给所有应用
 basic:
   scheduler:
     # 调度线程数
