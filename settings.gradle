@@ -1,5 +1,5 @@
 rootProject.name = "xcloud"
 
-include "config"
-include "eureka"
-include "portal"
+include "registry"
+include "service1"
+include "service2"

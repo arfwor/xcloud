@@ -1,0 +1,20 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: registry
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/arfwor/xcloud
+          searchPaths: repos
+#          username: xxx
+#          password: xxx
+#        native:
+#          search-locations: classpath:/
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
