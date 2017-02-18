@@ -1,4 +1,4 @@
-package org.learning.portal;
+package org.learning.service1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

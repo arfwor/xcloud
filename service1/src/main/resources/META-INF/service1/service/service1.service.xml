@@ -14,7 +14,7 @@
                 http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd"
                 default-lazy-init="true">
 
-	<context:component-scan base-package="org.learning.portal.service" use-default-filters="false">
+	<context:component-scan base-package="org.learning.service1.service" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
 

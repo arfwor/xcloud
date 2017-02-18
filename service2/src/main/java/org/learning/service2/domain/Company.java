@@ -1,4 +1,4 @@
-package org.learning.portal.domain;
+package org.learning.service2.domain;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,4 +1,4 @@
-package org.learning.portal.web;
+package org.learning.service1.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,6 +1,6 @@
-package org.learning.portal.service;
+package org.learning.service2.service;
 
-import org.learning.portal.domain.Company;
+import org.learning.service2.domain.Company;
 
 public interface ICompanyService {
 

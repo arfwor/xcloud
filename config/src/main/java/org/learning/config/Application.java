@@ -1,4 +1,4 @@
-package org.learning.eureka;
+package org.learning.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
