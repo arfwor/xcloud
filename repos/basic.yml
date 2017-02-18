@@ -1,0 +1,19 @@
+basic:
+  scheduler:
+    # 调度线程数
+    poolSize: 20
+    # 调度线程名前缀
+    threadNamePrefix: basic-scheduler-task-
+  temp:
+    # 临时文件根目录，不设置时，使用系统默认的临时目录
+    root:
+  shiro:
+    cookie:
+      rme:
+        # shiro 登录记住我 cookie name
+        name: rme
+        # shiro 登录记住我加密 maxAge: 30天
+        maxAge: 2592000
+        # shiro 登录记住我加密 key
+        cipher:
+          key: LIpWnFjgbbX3k18lN3+mvQ==
