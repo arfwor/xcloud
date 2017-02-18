@@ -1,9 +1,9 @@
 server:
-  port: 8761
+  port: 0
 
 spring:
   application:
-    name: registry
+    name: config
   cloud:
     config:
       server:
@@ -15,6 +15,9 @@ spring:
 #        native:
 #          search-locations: classpath:/
 
-eureka:
-  instance:
-    hostname: 127.0.0.1
+#eureka:
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://127.0.0.1:8761/eureka/
