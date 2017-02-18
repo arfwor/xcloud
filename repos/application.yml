@@ -1,12 +1,4 @@
 # 公共的配置, 共享配置给所有应用
-
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://127.0.0.1:8762/eureka/
-
 basic:
   scheduler:
     # 调度线程数
