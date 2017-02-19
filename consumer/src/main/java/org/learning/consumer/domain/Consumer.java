@@ -8,30 +8,24 @@ import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 @JsonAutoDetect(creatorVisibility = NONE, fieldVisibility = NONE, getterVisibility = NONE, setterVisibility = NONE, isGetterVisibility = NONE)
 public class Consumer {
 
-    /**
-     * 电话号码
-     */
-    @JsonProperty("phone")
-    private String phone;
-    /**
-     * 电子邮箱
-     */
-    @JsonProperty("email")
-    private String email;
+    @JsonProperty("id")
+    private String id;
+    @JsonProperty("name")
+    private String name;
 
-    public String getPhone() {
-        return phone;
+    public String getId() {
+        return id;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getName() {
+        return name;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setName(String name) {
+        this.name = name;
     }
 }

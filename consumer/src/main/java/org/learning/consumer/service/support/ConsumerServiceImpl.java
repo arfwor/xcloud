@@ -17,9 +17,10 @@ public class ConsumerServiceImpl implements IConsumerService {
         return new RestTemplate();
     }
 
+    @Override
     public Consumer getConsumer(String id) {
-        System.out.println(getRestOperations());
-        return null;
+        String url = "http://provider/produces/{id}";
+        return getRestOperations().getForObject(url, Consumer.class, id);
     }
 
 }

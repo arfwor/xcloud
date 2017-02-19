@@ -14,7 +14,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @RestController
-@RequestMapping("provider")
+//@RequestMapping("provider")
 public class ProviderController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ProviderController.class);
