@@ -7,5 +7,10 @@ docker/run-eureka.sh 3
 docker/run-config.sh 1
 docker/run-config.sh 2
 
-docker/run-service1.sh 1
-docker/run-service2.sh 1
+docker/run-provider.sh 1
+docker/run-consumer.sh 1
+
+
+http://127.0.0.1:8761/
+http://127.0.0.1:8081/produces/abc
+http://127.0.0.1:8082/consumes/abc

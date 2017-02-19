@@ -10,6 +10,6 @@ DOCKER_ADD_HOST="\
 	--add-host eureka3:172.17.0.4\
 	--add-host config1:172.17.0.5\
 	--add-host config2:172.17.0.6\
-	--add-host service1:172.17.0.7\
-	--add-host service2:172.17.0.8\
+	--add-host provider1:172.17.0.7\
+	--add-host consumer2:172.17.0.8\
 	"

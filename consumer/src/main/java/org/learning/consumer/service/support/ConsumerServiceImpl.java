@@ -2,25 +2,22 @@ package org.learning.consumer.service.support;
 
 import org.learning.consumer.domain.Consumer;
 import org.learning.consumer.service.IConsumerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestOperations;
-import org.springframework.web.client.RestTemplate;
 
 @Service(IConsumerService.SERVICE_ID)
 public class ConsumerServiceImpl implements IConsumerService {
 
-    @Bean
+    @Autowired
     @LoadBalanced
-    public RestOperations getRestOperations() {
-        return new RestTemplate();
-    }
+    private RestOperations restOperations;
 
     @Override
     public Consumer getConsumer(String id) {
         String url = "http://provider/produces/{id}";
-        return getRestOperations().getForObject(url, Consumer.class, id);
+        return restOperations.getForObject(url, Consumer.class, id);
     }
 
 }
