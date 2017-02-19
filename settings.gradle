@@ -2,5 +2,5 @@ rootProject.name = "xcloud"
 
 include "eureka"
 include "config"
-include "service1"
-include "service2"
+include "provider"
+include "consumer"

@@ -79,7 +79,7 @@ project(':config') {
 	dependencyManagement { imports { mavenBom "org.springframework.cloud:spring-cloud-dependencies:$cloudVersion" } }
 }
 
-project(':service1') {
+project(':provider') {
 	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
 	dependencies {
@@ -98,7 +98,7 @@ project(':service1') {
 	dependencyManagement { imports { mavenBom "org.springframework.cloud:spring-cloud-dependencies:$cloudVersion" } }
 }
 
-project(':service2') {
+project(':consumer') {
 	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
 	dependencies {

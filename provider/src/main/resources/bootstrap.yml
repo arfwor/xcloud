@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: provider
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+---
+spring:
+  profiles: cloud
+
+eureka:
+  client:
+    # 在 docker/run-eureka.sh 中设置
+#    serviceUrl:
+#      defaultZone: ${EUREKA_SERVER_LIST}
