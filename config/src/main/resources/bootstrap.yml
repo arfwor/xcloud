@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/arfwor/xcloud
+          uri: https://github.com/dean168/xcloud
           searchPaths: repos
 #          username: xxx
 #          password: xxx

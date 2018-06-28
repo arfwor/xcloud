@@ -7,8 +7,8 @@ buildscript {
 	}
     dependencies {
 		classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
-		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE'
-		classpath 'io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE'
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE'
+		classpath 'io.spring.gradle:dependency-management-plugin:1.0.5.RELEASE'
 	}
 }
 
@@ -47,9 +47,9 @@ subprojects {
 	}
 
     ext {
-    	springVersion = '4.3.10.RELEASE'
-    	cloudVersion = 'Dalston.SR2'
-		jacksonVersion = '2.8.9'
+    	springVersion = '4.3.18.RELEASE'
+    	cloudVersion = 'Finchley.RELEASE'
+		jacksonVersion = '2.9.6'
     	psqlVersion = '9.4.1208'
 		junitVersion = '4.12'
 	}
@@ -66,24 +66,26 @@ subprojects {
 
 project(':eureka') {
 	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
 	dependencies {
 //		compile('org.springframework.boot:spring-boot-starter-web')
 //		compile('org.springframework.boot:spring-boot-starter-actuator')
 //		compile('org.springframework.cloud:spring-cloud-config-monitor')
-		compile('org.springframework.cloud:spring-cloud-starter-eureka')
-		compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
 	}
 	dependencyManagement { imports { mavenBom "org.springframework.cloud:spring-cloud-dependencies:$cloudVersion" } }
 }
 
 project(':config') {
 	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
 	dependencies {
 //		compile('org.springframework.boot:spring-boot-starter-web')
 //		compile('org.springframework.boot:spring-boot-starter-actuator')
 //		compile('org.springframework.cloud:spring-cloud-config-monitor')
 		compile('org.springframework.cloud:spring-cloud-starter-config')
-		compile('org.springframework.cloud:spring-cloud-starter-eureka')
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
 		compile('org.springframework.cloud:spring-cloud-config-server')
 	}
 	dependencyManagement { imports { mavenBom "org.springframework.cloud:spring-cloud-dependencies:$cloudVersion" } }
@@ -97,7 +99,7 @@ project(':provider') {
 //		compile('org.springframework.boot:spring-boot-starter-actuator')
 //		compile('org.springframework.cloud:spring-cloud-config-monitor')
 		compile('org.springframework.cloud:spring-cloud-starter-config')
-		compile('org.springframework.cloud:spring-cloud-starter-eureka')
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
 		compile("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
 		compile("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
 		compile("com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:$jacksonVersion")
@@ -116,7 +118,7 @@ project(':consumer') {
 //		compile('org.springframework.boot:spring-boot-starter-actuator')
 //		compile('org.springframework.cloud:spring-cloud-config-monitor')
 		compile('org.springframework.cloud:spring-cloud-starter-config')
-		compile('org.springframework.cloud:spring-cloud-starter-eureka')
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
 		compile("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
 		compile("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
 		compile("com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:$jacksonVersion")
