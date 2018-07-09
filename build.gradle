@@ -126,3 +126,13 @@ project(':consumer') {
     }
 	dependencyManagement { imports { mavenBom "org.springframework.cloud:spring-cloud-dependencies:$cloudVersion" } }
 }
+
+project(':gateway') {
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+	dependencies {
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-zuul')
+		compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+    }
+	dependencyManagement { imports { mavenBom "org.springframework.cloud:spring-cloud-dependencies:$cloudVersion" } }
+}

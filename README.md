@@ -10,7 +10,12 @@ docker/run-config.sh 2
 docker/run-provider.sh 1
 docker/run-consumer.sh 1
 
+docker/run-gateway.sh 1
+
 
 http://127.0.0.1:8761/
 http://127.0.0.1:8081/produces/abc
 http://127.0.0.1:8082/consumes/abc
+
+http://127.0.0.1:8080/api/provider/produces/abc
+http://127.0.0.1:8080/api/consumer/consumes/abc
