@@ -1,0 +1,4 @@
+zuul:
+  routes:
+    provider: /produces/**
+    consumer: /consumes/**
