@@ -1,6 +1,6 @@
-package org.learning.provider.service;
+package org.learning.cloud.provider.service;
 
-import org.learning.provider.domain.Produces;
+import org.learning.cloud.provider.domain.Produces;
 
 public interface IProviderService {
 

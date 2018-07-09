@@ -1,7 +1,7 @@
-package org.learning.provider.web;
+package org.learning.cloud.provider.web;
 
-import org.learning.provider.domain.Produces;
-import org.learning.provider.service.IProviderService;
+import org.learning.cloud.provider.domain.Produces;
+import org.learning.cloud.provider.service.IProviderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

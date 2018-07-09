@@ -1,4 +1,4 @@
-package org.learning.consumer.domain;
+package org.learning.cloud.consumer.domain;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,12 +6,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 
 @JsonAutoDetect(creatorVisibility = NONE, fieldVisibility = NONE, getterVisibility = NONE, setterVisibility = NONE, isGetterVisibility = NONE)
-public class Staff {
+public class Consumer {
 
+    @JsonProperty("id")
+    private String id;
     @JsonProperty("name")
     private String name;
-    @JsonProperty("avatar")
-    private String avatar;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -19,13 +27,5 @@ public class Staff {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
     }
 }

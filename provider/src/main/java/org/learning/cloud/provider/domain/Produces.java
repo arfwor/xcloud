@@ -1,4 +1,4 @@
-package org.learning.provider.domain;
+package org.learning.cloud.provider.domain;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;

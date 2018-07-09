@@ -1,4 +1,4 @@
-package org.learning.provider;
+package org.learning.cloud.provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

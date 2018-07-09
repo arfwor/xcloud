@@ -1,7 +1,7 @@
-package org.learning.consumer.service.support;
+package org.learning.cloud.consumer.service.support;
 
-import org.learning.consumer.domain.Consumer;
-import org.learning.consumer.service.IConsumerService;
+import org.learning.cloud.consumer.domain.Consumer;
+import org.learning.cloud.consumer.service.IConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;

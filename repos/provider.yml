@@ -2,4 +2,5 @@ logging:
   level:
     org:
       learning:
-        provider: DEBUG
+        cloud:
+          provider: DEBUG

@@ -1,6 +1,6 @@
-package org.learning.consumer.service;
+package org.learning.cloud.consumer.service;
 
-import org.learning.consumer.domain.Consumer;
+import org.learning.cloud.consumer.domain.Consumer;
 
 public interface IConsumerService {
 

@@ -12,4 +12,5 @@ DOCKER_ADD_HOST="\
 	--add-host config2:172.17.0.6\
 	--add-host provider1:172.17.0.7\
 	--add-host consumer2:172.17.0.8\
+	--add-host gateway1:172.17.0.9\
 	"

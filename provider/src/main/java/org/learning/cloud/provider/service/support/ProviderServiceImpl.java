@@ -1,7 +1,7 @@
-package org.learning.provider.service.support;
+package org.learning.cloud.provider.service.support;
 
-import org.learning.provider.domain.Produces;
-import org.learning.provider.service.IProviderService;
+import org.learning.cloud.provider.domain.Produces;
+import org.learning.cloud.provider.service.IProviderService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package org.learning.consumer.web;
+package org.learning.cloud.consumer.web;
 
-import org.learning.consumer.domain.Consumer;
-import org.learning.consumer.service.IConsumerService;
+import org.learning.cloud.consumer.domain.Consumer;
+import org.learning.cloud.consumer.service.IConsumerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
